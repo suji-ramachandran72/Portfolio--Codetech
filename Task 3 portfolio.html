@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav h2{
+    color: #ffdd59;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #ffdd59;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after{
+    width: 100%;
+}
+
+/* ================= HERO SECTION ================= */
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-text{
+    max-width: 550px;
+}
+
+.hero-text h1{
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.hero-text h3{
+    font-size: 26px;
+    color: #ffdd59;
+    margin-bottom: 20px;
+}
+
+.hero-text p{
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.hero img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 6px solid #ffdd59;
+    object-fit: cover;
+    box-shadow: 0 0 25px rgba(255,221,89,0.4);
+}
+
+/* ================= BUTTON ================= */
+button{
+    padding: 14px 30px;
+    background: linear-gradient(45deg, #ffdd59, #f7c600);
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255,221,89,0.4);
+}
+
+/* ================= SKILLS ================= */
+.skills{
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.skills h2{
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+.skills-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.skill-box{
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.skill-box:hover{
+    background: #ffdd59;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* ================= PROJECTS ================= */
+.projects{
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.projects h2{
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+.project-container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.project-card{
+    width: 280px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3{
+    padding: 15px;
+    font-size: 20px;
+    color: #ffdd59;
+}
+
+.project-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* ================= CONTACT ================= */
+.contact{
+    padding: 70px 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+}
+
+.contact h2{
+    font-size: 36px;
+    color: #ffdd59;
+    margin-bottom: 15px;
+}
+
+.contact p{
+    font-size: 18px;
+    color: #e0e0e0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:768px){
+    .hero{
+        text-align: center;
+    }
+
+    nav{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <h2>My Portfolio</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Suji Ramachandran</h1>
+        <h3>Full Stack Developer</h3>
+        <p>
+           Didicated to developing responsive full-stack web applications with a strong interest in learning and applying front-end and back-end technologies.
+        </p>
+        <button>Explore</button>
+    </div>
+
+    <img src="suji.jpeg" alt="Profile Image">
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="skills" id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+        <div class="skill-box">HTML</div>
+        <div class="skill-box">CSS</div>
+        <div class="skill-box">JavaScript</div>
+        <div class="skill-box">React</div>
+         <div class="skill-box">Figma</div>  
+         <div class="skill-box">Python</div>
+
+    </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="projects" id="projects">
+    <h2>My Projects</h2>
+    <div class="project-container">
+
+        <div class="project-card">
+            <img src="porfolio.jpeg" alt="Portfolio Website">
+            <h3>Portfolio Website</h3>
+        </div>
+
+        <div class="project-card">
+            <img src="quiz.jpeg" alt="Quiz Application">
+            <h3>Quiz Application</h3>
+        </div>
+
+        <div class="project-card">
+            <img src="images/project3.jpg" alt="Chat Application">
+            <h3>Chat Application</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>Email: suji190406@gmail.com</p>
+    <p>Moblile No:7810013245</p>
+    <a href="https;//github.com/suji-ramachandran72" target="_blank" style="color:#4facfe;">Git Repository</a>
+</section>
+
+</body>
+</html>
